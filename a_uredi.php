@@ -1,11 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION["korisnik"])){
+/*if(!isset($_SESSION["korisnik"])){
   header("Location:login.php");
 }
 if(!isset($_POST["id"])){
   header("location:a_svi_korisnici.php");
-}
+}*/
 $naslov = "Uredi korisnika";
 require_once("header.php");
 require_once("a_navigacija.php");

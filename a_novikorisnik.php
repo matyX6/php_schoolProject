@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION["korisnik"])){
+/*if(!isset($_SESSION["korisnik"])){
   header("Location:login.php");
-}
+}*/
 $naslov = "Novi korisnik";
 require_once("header.php");
 require_once("a_navigacija.php");

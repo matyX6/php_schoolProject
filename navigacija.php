@@ -1,17 +1,17 @@
 <?php
 
 echo '
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="pocetna.php"><b>Love2Travel</b></a>
+  <a class="navbar-brand" href="pocetna.php"><b>lionfred</b></a>
 
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a id="pocetna" class="nav-link" href="pocetna.php">Početna</a>
+      <a id="pocetna" class="nav-link" href="pocetna.php">Games</a>
     </li>
     <li class="nav-item">
-      <a id="info" class="nav-link" href="info_gost.php">O nama</a>
+      <a id="info" class="nav-link" href="info_gost.php">About us</a>
     </li>
     <li class="nav-item">
       <a id="login" class="nav-link" href="login.php"><b>Prijava</b></a>
