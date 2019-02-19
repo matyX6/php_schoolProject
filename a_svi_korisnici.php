@@ -12,7 +12,127 @@ echo '<script>
   document.getElementById("svikorisnici").classList.add("active");
 </script>';
 
-echo "<h2>Svi korisnici sustava</h2>";
+echo '  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>';
+
+echo '
+
+<style>
+  h1
+  {
+    align="center"
+  }
+  
+  .jumbotron {
+    background-color: #D8D8D8;
+    color: #000;
+    padding: 100px 25px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #1e90ff;
+    font-size: 50px;
+  }
+  .logo {
+    color: #1e90ff;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #d65633;
+  }
+  .carousel-indicators li {
+    border-color: #d65633;
+  }
+  .carousel-indicators li.active {
+    background-color: #d65633;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #1e90ff; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #1e90ff;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #1e90ff !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #1e90ff;
+    color: #fff;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  body
+  {
+    background-color: #d65633
+  }
+  
+  .centar
+  {
+    margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  }
+  </style>
+';
+
+echo "<h2 align=center>Svi korisnici sustava</h2>";
 
 require_once("baza.php");
 
@@ -53,7 +173,8 @@ if($izjava->execute()){
   $rezultat = $izjava->get_result();
   echo "<table>";
   while($redak = $rezultat->fetch_assoc()){
-    echo "<tr>
+    echo "
+    <tr>
     <td>
     <img width='50' height='50' src='avatari/".$redak['avatar'] ."'/>
     </td>
@@ -80,7 +201,8 @@ if($izjava->execute()){
         data-singleton="true">
         Obriši
         </button>'."
-    </td></tr>";
+    </td></tr>
+    ";
   }
   echo "</table>";
   echo "<script>$('[data-toggle=confirmation]').confirmation({

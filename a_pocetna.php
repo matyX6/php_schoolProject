@@ -11,18 +11,12 @@ require_once("header.php");
 
 echo '<script>
   document.getElementById("pocetna").classList.add("active");
-  
-  
 </script>';
 
 
 echo '  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>';
-
-
-
-
 
 echo '
 
@@ -58,13 +52,13 @@ echo '
   }
   .carousel-control.right, .carousel-control.left {
     background-image: none;
-    color: #1e90ff;
+    color: #d65633;
   }
   .carousel-indicators li {
-    border-color: #1e90ff;
+    border-color: #d65633;
   }
   .carousel-indicators li.active {
-    background-color: #1e90ff;
+    background-color: #d65633;
   }
   .item h4 {
     font-size: 19px;
@@ -120,56 +114,35 @@ echo '
       margin: 25px 0;
     }
   }
+  body
+  {
+    background-color: #d65633
+  }
   </style>
-
-
-
 ';
 
 
 echo '
 
-
-<div class="jumbotron text-center">
-  <h1>Love2Travel <span class="glyphicon glyphicon-plane logo-small"></span></h1> 
-  <p>Web aplikacija namijenjena osobama koje vole putovati i podijeliti svoja iskustva sa drugima.</p> 
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Ciljevi aplikacije</h2>
-      </br>
-      <h4><strong>MISIJA:</strong> Omogućiti velikoj količini avanturista da se poveže na jednom mjestu !</h4>      
-    </div>
-  </div>
-</div>
-
-
-
-<div class="container-fluid text-center bg-grey">
-  <h2>Popularna odredišta</h2><br>
-  <h4>Da li ste ih već posjetili?</h4>
+<div class="jumbotron text-center bg-light ">
+  <h2>We make casual mobile games.</h2><h5>Lion Fred Entertainment</h5><br><br><br>
   <div class="row text-center">
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="london.jpg" alt="London" width="400" height="300">
-        <p><strong>London</strong></p>
+        <img src="bunners.png" alt="bunners" width="400" height="300">
+        <p><strong>Bunners</strong></p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York" width="400" height="300">
-        <p><strong>New York</strong></p>
+        <img src="whiteblocks.png" alt="whiteblocks" width="400" height="300">
+        <p><strong>White Blocks</strong></p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="rome.jpg" alt="Rim" width="400" height="300">
-        <p><strong>Rim</strong></p>
+        <img src="splashem.png" alt="splashem" width="400" height="300">
+        <p><strong>Splash em</strong></p>
       </div>
     </div>
   </div>
@@ -213,6 +186,4 @@ echo '
 
 ';
 
-     
-     require_once("footer.php");
   ?>

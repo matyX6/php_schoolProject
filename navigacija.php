@@ -14,7 +14,7 @@ echo '
       <a id="info" class="nav-link" href="info_gost.php">About us</a>
     </li>
     <li class="nav-item">
-      <a id="login" class="nav-link" href="login.php"><b>Prijava</b></a>
+      <a id="login" class="nav-link" href="login.php"><b>Log in</b></a>
     </li>    
     
     

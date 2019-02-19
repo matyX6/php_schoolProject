@@ -11,40 +11,127 @@ echo '<script>
   document.getElementById("info").classList.add("active");
 </script>';
 
-echo '  <style>
-  .bg-1 { 
-    background-color: #1abc9c;
-    color: #ffffff;
-  }
-  .bg-2 { 
-    background-color: #474e5d;
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-color: #ffffff;
-    color: #555555;
+echo '  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>';
+
+echo '
+
+<style>
+  .jumbotron {
+    background-color: #D8D8D8;
+    color: #000;
+    padding: 100px 25px;
   }
   .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding: 60px 50px;
   }
-  </style>';
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #1e90ff;
+    font-size: 50px;
+  }
+  .logo {
+    color: #1e90ff;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #1e90ff;
+  }
+  .carousel-indicators li {
+    border-color: #1e90ff;
+  }
+  .carousel-indicators li.active {
+    background-color: #1e90ff;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #1e90ff; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #1e90ff;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #1e90ff !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #1e90ff;
+    color: #fff;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  body
+  {
+    background-color: #d65633
+  }
+  </style>
 
 
-echo '<div class="container-fluid bg-1 text-center">
-  <h3>Tko sam ja?</h3>
+
+';
+
+
+
+echo '<div class="jumbotron text-center bg-light ">
   <img src="avatar.png" class="img-circle" alt="Ja" width="250" height="250">
-  <h3>Avanturist i programer u jednoj osobi !</h3>
-</div>
-
-<div class="container-fluid bg-2 text-center">
-  <h3>Čime se bavim?</h3>
-  <p>Student završne godine računarstva Međimurskog Veleučilišta u Čakovcu koji voli putovati kad god nađe slobodnog vremena.</p>
+  <h3>Lion Fred Entertainment</h3>
 </div>
 
 <div class="container-fluid bg-3 text-center">
-  <h3>Kontakt</h3>
-  <p>E-mail: <b>marko.hrncic@student.mev.hr</b></p>
-  <p>Mobitel: <b>099-570-6105</b></p>';
+  <h3>Contact</h3>
+  <p>e-mail: <b>lionfredentertainment@gmail.com</b></p>
+  <p>phone: <b>090 0000 000</b></p>';
      require_once("footer.php");
   ?>
+
