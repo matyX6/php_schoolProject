@@ -119,11 +119,12 @@ echo '
   }
   body
   {
-    background-color: #d65633
+    background-color: #D3D3D3
   }
   </style>
 ';
-     
+
+
      if(Form::isValid("login", false)){
         $lozinka = trim(htmlentities($_POST["lozinka"]));
         $korisnik=trim(htmlentities($_POST["korisnik"]));

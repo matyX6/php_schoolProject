@@ -110,7 +110,7 @@ echo '
   }
   body
   {
-    background-color: #d65633
+    background-color: #D3D3D3
   }
   </style>
 ';
