@@ -140,24 +140,24 @@ echo '
                     $procitano = $query->get_result();
                     if(count($procitano->fetch_array())){
                         //korisnik se već nalazi u bazi
-                        Form::setError("novikorisnik","Korisnik postoji u bazi podataka. Odaberite drugo korisničko ime");
+                        Form::setError("novikorisnik","Username already exist!");
                     }
                     else{
                         //korisnika nema  u bazi
                         //rad sa slikom
                         $dozvoljeni_mime = array("image/gif","image/jpeg","image/png");
                         $upload_greske = array(
-                          UPLOAD_ERR_OK =>"Datoteka je uspješno prenesena na server",                   
-                          UPLOAD_ERR_INI_SIZE=>"Prevelika datoteka",                          
-                          UPLOAD_ERR_FORM_SIZE=>"Prevelika datoteka",                  
-                          UPLOAD_ERR_PARTIAL=>"Datoteka nije u potpunosti prenesena na server",                  
-                          UPLOAD_ERR_NO_FILE=>"Nije predana datoteka",                  
-                          UPLOAD_ERR_NO_TMP_DIR=>"Greška na serveru",                
-                          UPLOAD_ERR_CANT_WRITE=>"Greška na serveru",                  
-                          UPLOAD_ERR_EXTENSION=>"Greška na serveru"
+                          UPLOAD_ERR_OK =>"File successfuly uploaded!",                   
+                          UPLOAD_ERR_INI_SIZE=>"File is to big to upload",                          
+                          UPLOAD_ERR_FORM_SIZE=>"File is to big to upload",                  
+                          UPLOAD_ERR_PARTIAL=>"Something went wrong!",                  
+                          UPLOAD_ERR_NO_FILE=>"Error, file not uploaded!",                  
+                          UPLOAD_ERR_NO_TMP_DIR=>"Error!",                
+                          UPLOAD_ERR_CANT_WRITE=>"Error!",                  
+                          UPLOAD_ERR_EXTENSION=>"Error!"
                         );
                         if(!empty($_FILES['slika']['type']) && !in_array($_FILES['slika']['type'],$dozvoljeni_mime)){
-                          Form::setError("novikorisnik","Niste odabrali ispravan tip datoteke (koristite samo gif, png i jpeg)");
+                          Form::setError("novikorisnik","Wrong file format(use gif, png or jpeg)");
                         }else{
                           $greska = $_FILES['slika']['error'];
                           if($greska>0){
@@ -197,15 +197,15 @@ echo '
                                   if($query->execute()){
                                       //uspješno upisano
                                       Form::clearValues("novikorisnik");
-                                       echo ('<div class="alert alert-success" role="alert">Korisnik je dodan u bazu!</div>');
+                                       echo ('<div class="alert alert-success" role="alert">User successfully created!</div>');
                                   }
                                   else{
-                                      Form::setError("novikorisnik","Korisnik nije upisan u bazu");
+                                      Form::setError("novikorisnik","User not created, try again!");
                                   }
                               }
                             }
                             else{
-                              Form::setError("novikorisnik","Greška sa premještanjem datoteke");
+                              Form::setError("novikorisnik","Error!");
                             }
                           }
                         }
@@ -215,25 +215,25 @@ echo '
                     
                 }
                 else{
-                    Form::setError("novikorisnik","Nije moguće pročitati bazu");
+                    Form::setError("novikorisnik","Something went wrong, try again!");
                 }            
         }
         else{
-            Form::setError("novikorisnik","Lozinke se ne podudaraju");
+            Form::setError("novikorisnik","Passwords don't match");
         }
      }
      if(!isset($_POST["provjera"])) Form::clearErrors("novikorisnik");
      
      Form::open("novikorisnik","",["view"=>"SideBySide4",'enctype'=> 'multipart/form-data']);
      Form::Hidden("provjera","da");
-     echo "<legend>Kreiraj novog korisnika</legend>";
-     Form::File("Avatar: ","slika", array("required"=>1));
-     Form::TextBox("Korisnik: ","korisnik",array("required"=>1,
-                                                 "validation"=> new Validation_RegExp("/^[a-z0-9_\-.]{5,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i .")));
-     Form::Password("Lozinka: ","lozinka",array("required"=>1,
-                                                "validation"=> new Validation_RegExp("/^[a-zA-Z0-9_\-.]{6,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i .")));
-     Form::Password("Ponovi lozinku: ","lozinka2",array("required"=>1));
-     Form::Button("Kreiraj korisnika");
+     echo "<h1 align=center> Create a new user account</h1><br>";
+     Form::File("Profile picture: ","slika", array("required"=>1));
+     Form::TextBox("Username: ","korisnik",array("required"=>1,
+                                                 "validation"=> new Validation_RegExp("/^[a-z0-9_\-.]{5,50}$/", "%element% minimum 5 characters (letters, numbers, symbols:_, -, .)")));
+     Form::Password("Password: ","lozinka",array("required"=>1,
+                                                "validation"=> new Validation_RegExp("/^[a-zA-Z0-9_\-.]{6,50}$/", "%element% minimum 5 characters (letters, numbers, symbols:_, -, .)")));
+     Form::Password("Repeat password: ","lozinka2",array("required"=>1));
+     Form::Button("Create user");
      Form::close(false);
      
      require_once("footer.php");

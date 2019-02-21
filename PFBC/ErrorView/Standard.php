@@ -5,9 +5,9 @@ class ErrorView_Standard extends ErrorView {
         echo <<<JS
         var errorSize = response.errors.length;
         if(errorSize == 1)
-            var errorFormat = "Pronađena greška je" ;
+            var errorFormat = "Error:" ;
         else
-            var errorFormat = "Pronađene su " + errorSize + " pogreške: ";
+            var errorFormat = "We found " + errorSize + " errors: ";
 
         $('.alert-danger').hide();
         var errorHTML = '<div class="alert alert-danger"><a class="close" data-dismiss="alert" href="#">×</a><strong class="alert-heading">The following ' + errorFormat + ' </strong><ul>';
@@ -37,9 +37,9 @@ JS;
             $errors = implode("</li><li>", $errors);
 
             if($size == 1)
-                $format = "Pronađena je pogreška: ";
+                $format = "Error found: ";
             else
-                $format = "Pronađene su ".$size . " pogreške:";
+                $format = "We found ".$size . " errors:";
 
             echo <<<HTML
             <div class="alert alert-danger">

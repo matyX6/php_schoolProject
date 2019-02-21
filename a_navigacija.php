@@ -2,7 +2,7 @@
 echo '
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#"><b>lionfred</b></a>
+  <a class="navbar-brand" href="a_pocetna.php"><b>lionfred</b></a>
 
   <!-- Links -->
   <ul class="navbar-nav">
@@ -19,7 +19,7 @@ echo '
         Users
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" id="novikorisnik" href="a_novikorisnik.php">+ New user</a>
+        <a class="dropdown-item" id="novikorisnik" href="a_novikorisnik.php">+ Create user</a>
         <a class="dropdown-item" id="svikorisnici" href="a_svi_korisnici.php">User list</a>
       </div>
     </li>

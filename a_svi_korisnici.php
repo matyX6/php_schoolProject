@@ -129,10 +129,16 @@ echo '
   border: 3px solid green;
   padding: 10px;
   }
+  
+  td
+  {
+    padding:0 2px 0 2px;
+  }
+  
   </style>
 ';
 
-echo "<h2 align=center>Svi korisnici sustava</h2>";
+echo "<h2 align=center>List of all users</h2>";
 
 require_once("baza.php");
 
@@ -171,35 +177,37 @@ $odmak = $brojPoStranici*($stranica-1);
 $izjava = $baza->prepare("SELECT * FROM korisnici ORDER BY id ASC LIMIT $brojPoStranici OFFSET $odmak");
 if($izjava->execute()){
   $rezultat = $izjava->get_result();
-  echo "<table>";
+  echo "<br><table align=center>";
   while($redak = $rezultat->fetch_assoc()){
     echo "
     <tr>
+    
     <td>
     <img width='50' height='50' src='avatari/".$redak['avatar'] ."'/>
     </td>
     
     <td>".$redak["korisnik"]."</td><td><form action='a_uredi.php' method='post'>
     <input type='hidden' name='id' value='".$redak["id"]."'/>
-    <input type='submit' value='uredi' class='btn btn-info' />
+    <input type='submit' value='Edit user' class='btn btn-info' />
     </form></td>
-    <td>
     
+        <td>
     <form action='a_uredi_sliku.php' method='post'>
     <input type='hidden' name='id' value='".$redak["id"]."'/>
-    <input type='submit' value='Uredi sliku' class='btn btn-primary' />
+    <input type='submit' value='New image' class='btn btn-primary' />
     </form>
     </td>
     
+    
     <td>".
     '<button class="btn btn-danger" id="'.$redak["id"].'" data-toggle="confirmation"
-        data-btn-ok-label="DA" data-btn-ok-class="btn-danger"
+        data-btn-ok-label="YES" data-btn-ok-class="btn-danger"
         data-btn-ok-icon-class="fa fa-check" data-btn-ok-icon-content=""
-        data-btn-cancel-label="NE" data-btn-cancel-class="btn-success"
+        data-btn-cancel-label="NO" data-btn-cancel-class="btn-success"
         data-btn-cancel-icon-class="fa fa-ban" data-btn-cancel-icon-content=""
-        data-title="Želite li stvarno obrisati korisnika?" data-content="Ova operacija se ne može poništiti"
+        data-title="Are you sure?" data-content=" This operation can not be reversed."
         data-singleton="true">
-        Obriši
+        Delete user
         </button>'."
     </td></tr>
     ";
@@ -240,7 +248,7 @@ else{
   echo '<div class="alert alert-danger" role="alert">
   Nije bilo moguće pročitati bazu podataka
 </div>';
-}      
+}
      
      require_once("footer.php");
   ?>

@@ -152,13 +152,13 @@ echo '
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"The journey not the arrival matters."<br><span>T.S. Elliot</span></h4>
+        <h4>Get ready for a real challenge! Your reaction skills will be tested!<br><span>Bunners</span></h4>
       </div>
       <div class="item">
-        <h4>"The most beautiful in the world is, of course, the world itself."<br><span>Wallace Stevens</span></h4>
+        <h4>Destroy as many blocks as you can. Tap tap tap!<br><span>White Blocks</span></h4>
       </div>
       <div class="item">
-        <h4>"A ship in a harbor is safe, but it is not what ships are built for."<br><span>John A. Shedd</span></h4>
+        <h4>Unlimited levels, nice colors. Splash em!<br><span>Splash em</span></h4>
       </div>
     </div>
 

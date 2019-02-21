@@ -137,7 +137,7 @@ echo '
                     $procitano = $query->get_result();
                     if($procitano->num_rows==0){
                         //korisnik se ne nalazi u bazi
-                        Form::setError("login","Korisnik ne postoji u bazi podataka");
+                        Form::setError("login","User does not exist!");
                     }
                     else{
                         //uzeti podatke iz baze i provjeriti lozinku
@@ -150,14 +150,14 @@ echo '
                           header('Location:a_novikorisnik.php');
                         }
                         else{
-                          Form::setError("login","Pogrešna lozinka");
+                          Form::setError("login","Wrong password!");
                         }           
                        
                     }
                     
                 }
                 else{
-                  Form::setError("login","Nije moguće pročitati bazu");
+                  Form::setError("login","Something went wrong, try again!");
                 }
                          
      }
@@ -167,10 +167,10 @@ echo '
      Form::Hidden("provjera","da");
      echo "<h1 align=center>Log in</h1><br>";
      Form::TextBox("Username: ","korisnik",array("required"=>1,
-                                                 "validation"=> new Validation_RegExp("/^[a-z0-9_\-.]{5,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i .")));
+                                                 "validation"=> new Validation_RegExp("/^[a-z0-9_\-.]{5,50}$/", "%element% minimum 5 characters (letters, numbers, symbols:_, -, .)")));
      Form::Password("Password: ","lozinka",array("required"=>1,
-                                                "validation"=> new Validation_RegExp("/^[a-zA-Z0-9_\-.]{6,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i .")));     
-     Form::Button("Prijavi se");
+                                                "validation"=> new Validation_RegExp("/^[a-zA-Z0-9_\-.]{6,50}$/", "%element% minimum 5 characters (letters, numbers, symbols:_, -, .)")));     
+     Form::Button("Log in");
      Form::close(false);
      
      require_once("footer.php");
