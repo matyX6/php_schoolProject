@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION["korisnik"])){
   header("Location:login.php");
 }
-$naslov = "Korisnici sustava";
+$naslov = "Users";
 require_once("header.php");
 require_once("a_navigacija.php");
 

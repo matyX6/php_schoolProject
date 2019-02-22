@@ -9,7 +9,7 @@ if(!isset($_POST['id'])){
 else{
   $id = $_POST['id'];
 }
-$naslov = "Novi korisnik";
+$naslov = "Edit image";
 require_once("header.php");
 require_once("a_navigacija.php");
 

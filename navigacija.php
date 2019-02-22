@@ -13,6 +13,13 @@ echo '
     <li class="nav-item">
       <a id="info" class="nav-link" href="info_gost.php">About us</a>
     </li>
+	
+	</li>
+        <li class="nav-item">
+      <a class="nav-link" id="info" href="send.php">Send Message</a>
+    </li>
+	
+	
     <li class="nav-item">
       <a id="login" class="nav-link" href="login.php"><b>Log in</b></a>
     </li>    

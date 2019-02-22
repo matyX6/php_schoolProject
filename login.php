@@ -3,7 +3,7 @@ session_start();
 if(isset($_SESSION["korisnik"])){
   header("Location:a_novikorisnik.php");
 }
-$naslov ="Prijava";
+$naslov ="Log in";
 require_once("header.php");
 require_once("navigacija.php");
 require_once("PFBC/Form.php");

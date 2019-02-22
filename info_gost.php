@@ -1,6 +1,6 @@
 <?php
 
-$naslov = "Korisnici sustava";
+$naslov = "About";
 require_once("header.php");
 require_once("navigacija.php");
 

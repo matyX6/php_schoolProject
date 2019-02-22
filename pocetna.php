@@ -1,5 +1,5 @@
 <?php
-$naslov = "Korisnici sustava";
+$naslov = "Lionfred";
 require_once("header.php");
 require_once("navigacija.php");
 

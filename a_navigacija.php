@@ -24,6 +24,11 @@ echo '
       </div>
     </li>
 	
+	</li>
+        <li class="nav-item">
+      <a class="nav-link" id="info" href="inbox.php">Inbox</a>
+    </li>
+	
     <li class="nav-item">
       <a class="nav-link"  href="logout.php"><b>Log out</b></a>
     </li>
