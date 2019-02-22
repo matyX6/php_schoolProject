@@ -207,11 +207,11 @@ echo '
      Form::Hidden("provjera","da");
      Form::Hidden("id",$id);
      echo "<h1 align=center>Edit user</h1><br>";
-     Form::TextBox("Korisnik: ","korisnik",array("required"=>1,
+     Form::TextBox("Username: ","korisnik",array("required"=>1,
                                                  "validation"=> new Validation_RegExp("/^[a-z0-9_\-.]{5,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i ."),
                                                  "value"=>$korisnik));
-     Form::Password("Lozinka: ","lozinka",array("validation"=> new Validation_RegExp("/^[a-zA-Z0-9_\-.]{6,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i .")));
-     Form::Password("Ponovi lozinku: ","lozinka2");
+     Form::Password("Password: ","lozinka",array("validation"=> new Validation_RegExp("/^[a-zA-Z0-9_\-.]{6,50}$/", "%element% sadrži od 5 do 50 znakova. Dozvoljeni znakovi: slova, brojke, _, - i .")));
+     Form::Password("Repeat password: ","lozinka2");
      Form::Button("Save");
      Form::Button("Cancel","button", array("onclick"=>"location.href='a_svi_korisnici.php'"));
      Form::close(false);

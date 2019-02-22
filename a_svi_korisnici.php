@@ -1,8 +1,8 @@
 <?php
 session_start();
-/*if(!isset($_SESSION["korisnik"])){
+if(!isset($_SESSION["korisnik"])){
   header("Location:login.php");
-}*/
+}
 $naslov = "Korisnici sustava";
 require_once("header.php");
 require_once("a_navigacija.php");
@@ -138,19 +138,19 @@ echo '
   </style>
 ';
 
-echo "<h2 align=center>List of all users</h2>";
+echo "<br><h2 align=center>List of all users</h2>";
 
 require_once("baza.php");
 
 if(isset($_GET['obrisano'])){
   if($_GET['obrisano']=="da"){
     echo '<div class="alert alert-success" role="alert">
-  Korinik je uspješno obrisan iz baze
+  User account successfully deleted!
 </div>';
   }
   else{
     echo '<div class="alert alert-danger" role="alert">
-  Korisnik nije obrisan iz baze podataka
+  Something went wrong, user account is not successfully deleted!
 </div>';
   }
   
