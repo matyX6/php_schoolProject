@@ -351,7 +351,7 @@ exit();
 	$id = $_GET['remove'];
 	$remove = mysqli_query($baza,"DELETE FROM messages WHERE id = '$id'");
 	if($remove){
-		echo '<script>window.location = "./"</script>';
+		echo '<script>window.location = "./inbox.php"</script>';
 	}else {
 		die("Please Refresh the page.");
 	}
